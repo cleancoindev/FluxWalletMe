@@ -13,7 +13,7 @@
         <meta property="og:description" content="Gr1P is an all-new Hourglass game on Ethereum." />
         <meta property="og:image" content="https://fluxwallet.me/img/coin.png"/>
         
-        <title>Arcadium Wallet</title>
+        <title>Home | Flux Wallet</title>
         
         <meta charset="utf8">
         <meta name="description" content="Gr1P is an all-new Hourglass game on Ethereum.">
@@ -61,7 +61,8 @@
             </nav>
         </header>
         
-        <br /><br /><br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
         
         <main>
             <div class="container">
@@ -86,13 +87,13 @@
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-6 text-center">
-                                            <h4 class="text-white"><span id="myCropTokens"></span> P3C (<span id="myETCValue"></span> ETC)</h4>
+                                        <div class="col col-sm-6 text-center">
+                                            <h4 class="text-white"><span id="myCropTokens"></span> P3C <small>(<span id="myETCValue"></span> ETC)</small></h4>
                                             <small class="text-muted">My Balance</small>
                                             <br />
                                         </div>
                                         
-                                        <div class="col-md-6 text-center">
+                                        <div class="col col-sm-6 text-center">
                                             <h4 class="text-white"><span id="myCropDividends" class=""></span> ETC</h4>
                                             <small class="text-muted">My Dividends</small>
                                             <br />
@@ -126,7 +127,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h3><span id="tokenBuyGet" class="text-success">0.0000</span></h3>
+                                            <h2><span id="tokenBuyGet" class="text-success">0.0000</span></h2>
                                             <small class="text-muted">Current Price of 1 P3C</small>
                                         </div>
                                     </div>
@@ -148,7 +149,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="buy" class="btn btn-block btn-sm btn-success rcAll">Buy Points</button>
+                                            <button id="buy" class="btn btn-block btn-sm btn-success rcAll">Buy P3C</button>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +165,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h3><span id="tokenSellGet" class="text-danger">0.0000</span></h3>
+                                            <h2><span id="tokenSellGet" class="text-danger">0.0000</span></h2>
                                             <small class="text-muted">Current Value of 1 P3C</small>
                                         </div>
                                     </div>
@@ -186,7 +187,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="sell" class="btn btn-block btn-sm btn-danger rcAll">Sell Points</button>
+                                            <button id="sell" class="btn btn-block btn-sm btn-danger rcAll">Sell P3C</button>
                                         </div>
                                     </div>
                                 </div>
@@ -214,13 +215,13 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll" data-clipboard-text="">
+                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
                                                 <i class="copy icon"></i> Copy Address
                                             </button>
                                         </div>
 
                                         <div class="col text-center">
-                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll" data-clipboard-text="">
+                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
                                                 <i class="copy icon"></i> Copy Link
                                             </button>
                                         </div>
@@ -336,6 +337,17 @@
                 </div>
             </div>
         </footer>
+        
+        <br /><br /><br />
+        <br /><br /><br />
+        
+        <!-- Bottom Navbar -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: #000;">
+            <a class="navbar-brand" href="#"></a>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <div id="current"></div>
+            </ul>
+        </nav>
         
         <!-- Transfer Modal -->
         <div class="modal" id="transferModal">
@@ -490,5 +502,6 @@
         <script src="assets/lib/rainmaker.js"></script>
         <script src="assets/lib/masternode.js"></script>
         <script src="assets/lib/use.js"></script>
+        <script src="assets/lib/sponsor.js"></script>
     </body>
 </html>

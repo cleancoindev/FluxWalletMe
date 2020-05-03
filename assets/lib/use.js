@@ -121,7 +121,7 @@ function copyAddress() {
     document.execCommand("copy");
 }
 
-new ClipboardJS('.button');
-$('.ui.primary.basic.button.copy').on('click', function (){
+new ClipboardJS('.copybutton');
+$('.copybutton').on('click', function (){
   alertify.success('Copied', 2)
 })
