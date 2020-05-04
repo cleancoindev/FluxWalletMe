@@ -26,6 +26,7 @@
         <!-- Alertify CSS -->
         <link rel="stylesheet" href="assets/css/alertify.min.css" />
         <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
+        <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css" />
         
         <!-- Bootstrap theme -->
         <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
@@ -74,263 +75,127 @@
         
         <main>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="jumbotron glassPanel rcAll">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-left">
-                                        <h3 class="text-white">Flux Wallet</h3>
-                                        <p class="text-muted"><i>Custom Interface for <a href="https://commonwealth.gg/" target="_blank">Commonwealth.gg</a></i></p>
-                                    </div>
-                                </div>
+                <div class="row jumbotron glassPanel rcAll">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-left">
+                                <h3 class="text-white">Commonwealth Tribes</h3>
+                                <p class="text-muted"><i>If you want to go fast, go alone. If you want to go far, go with friends!</i></p>
                             </div>
                         </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-warning"></i> My Wallet</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropTokens"></span> P3C <small>(<span id="myETCValue"></span> ETC)</small></h4>
-                                            <small class="text-muted">My Balance</small>
-                                            <br />
-                                        </div>
-                                        
-                                        <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropDividends" class=""></span> ETC</h4>
-                                            <small class="text-muted">My Dividends</small>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="reinvest" class="btn btn-block btn-sm btn-warning rcAll"><i class="recycle icon"></i>Compound Dividends</button>
-                                        </div>
-                                        
-                                        <div class="col text-center">
-                                            <button id="withdraw" class="btn btn-block btn-sm btn-warning rcAll"><i class="money bill alternate  icon"></i>Take Dividends</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-success"></i> Buy P3C</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h2><span id="tokenBuyGet" class="text-success">0.0000</span></h2>
-                                            <small class="text-muted">Current Price of 1 P3C</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input placeholder="ETC to Spend..." type="text" id="buyInput" class="form-control rcAll" />
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <span id="buyAmount"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="buy" class="btn btn-block btn-sm btn-success rcAll">Buy P3C</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-danger"></i> Sell P3C</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h2><span id="tokenSellGet" class="text-danger">0.0000</span></h2>
-                                            <small class="text-muted">Current Value of 1 P3C</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input placeholder="P3C to Sell..." type="text" id="sellInput" class="form-control rcAll" />
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <span id="sellAmount"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="sell" class="btn btn-block btn-sm btn-danger rcAll">Sell P3C</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
                     <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center text-white">
-                                            <b>Your Crop Address:</b><br />
-                                            <small><span id="myCropAddress" class="approx"></span></small><br />
-                                            <br />
-                                            <p>When others use your Referral Link to Buy P3C, you get a special bonus! Be sure to share it around on all your Social Media!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
+                            <div class="card-header glassPanel rcTop text-white">Current Tribe: &quot;<i id="infoTribeName" class="content">Current</i>&quot;</div>
+                            <div class="card-body text-white">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
-                                                <i class="copy icon"></i> Copy Address
-                                            </button>
+                                            Account: <span id="myCropTokens"></span> P3C
                                         </div>
-
+                                        
                                         <div class="col text-center">
-                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
-                                                <i class="copy icon"></i> Copy Link
-                                            </button>
+                                            Tribes: <span id="tribeNumber"></span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                
-                </div>
- 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-body">
-                                <div class="container">
+                                    
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="rainMakerTokens"></span> P3C
-                                            </h4>
-                                            <small class="text-muted">Price Floor</small>
-                                            <br />
+                                            <table class="ui celled table unstackable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Age</th>
+                                                        <th>Cost</th>
+                                                        <th>Reward</th>
+                                                        <th>Size</th>
+                                                    </tr></thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="infoTribeId" data-label="ID">Null</td>
+                                                        <td id="infoTribeAge" data-label="Age">0 Seconds</td>
+                                                        <td id="infoTribeCost" data-label="Cost">0 ETC</td>
+                                                        <td id="infoTribeReward" data-label="Cost">0 P3C</td>
+                                                        <td id="infoTribeSize" data-label="Seats">0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-footer rcBottom">
-                                <div class="container">
+                                    <br />
+                                    
                                     <div class="row">
-                                        <div class="col">
-                                            <a id="rainMaker" class="btn btn-block btn-sm btn-secondary rcAll">
-                                                Raise Floor (<span id="rainMakerDividends"></span> ETC)
+                                        <div class="col text-center">
+                                            <div id="refundArea">
+                                                <a href="#" id="refund" class="btn btn-block btn-sm btn-danger rcAll button">Leave Tribe</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <div class="progress bg-dark rcAll" id="tribeSize" style="height: 20px">
+                                                <div class="progress-bar bar progress-bar-striped progress-bar-animated rcAll" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+                                                    <h4><span class="label" id="tribeLabel">Null Waiting / Null Total</span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a id="copyTribeButton" class="btn btn-block btn-sm btn-info rcAll button">
+                                                <i class="left magic icon"></i> Copy Tribe Link
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer glassPanel rcBottom text-white">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button id="join" class="btn btn-block btn-sm btn-success rcAll button">
+                                                Join this Tribe! <span id="buttonTribeCost"></span>
+                                            </button>
+                                            <h4>You're in the tribe, now find other players!</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <br />
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-body">
+                            <div class="card-header glassPanel rcTop text-white"><i class="globe icon"></i> Tribe Location</div>
+                            <div class="card-body text-white">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="diviesBalance"></span> ETC
-                                            </h4>
-                                            <small class="text-muted">Divies</small>
-                                            <br />
+                                            <iframe id="map" style="width:100%; height: 250px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=-33.8569,151.2152&center=-33.8569,151.2152&zoom=4&maptype=roadmap"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer glassPanel rcBottom text-white">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col">
-                                            <a id="distribute" class="btn btn-block btn-sm btn-secondary rcAll">
-                                                Split Divies
-                                            </a>
+                                        <div class="col text-center">
+                                            <h4>Each Tribe gets a random location around Earth!</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="etcInContract">0</span>
-                                            </h4>
-                                            <small class="text-muted">Vault</small>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <a class="btn btn-block btn-sm btn-secondary rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
                     </div>
                 </div>
+                <br />
             </div>
         </main>
         
@@ -498,6 +363,9 @@
         
         <script src="assets/js/semantic.min.js"></script>
         
+        <script src="assets/js/jquery.dataTables.min.js"></script>
+        <script src="assets/js/dataTables.responsive.min.js"></script>
+        
         <script src="assets/js/web3.min.js"></script>
         
         <script src="assets/js/clipboard.min.js"></script>
@@ -506,10 +374,29 @@
 
         <script src="assets/lib/util.js"></script>
         <script src="assets/lib/contracts.js"></script>
-        <script src="assets/lib/pure.js"></script>
         <script src="assets/lib/rainmaker.js"></script>
-        <script src="assets/lib/masternode.js"></script>
+        <script src="assets/lib/pure.js"></script>
         <script src="assets/lib/use.js"></script>
+        
+        <script src="assets/lib/masternode.js"></script>
         <script src="assets/lib/sponsor.js"></script>
+        <script src="assets/lib/tribe.js"></script>
+        <script src="assets/lib/lobby.js"></script>
+
+        <script>
+            function refreshPrice() {
+                $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USDT', function (json) {
+                    var USETC = JSON.parse(JSON.stringify(json)).USDT;
+                    var price = (USETC).toFixed(2);
+                    $("#price").text(price)
+                });
+            }
+            setTimeout(function () {
+                refreshPrice()
+            }, 2000);
+            setInterval(function () {
+                refreshPrice() // this will run after every 5 seconds
+            }, 12000);
+        </script>
     </body>
 </html>

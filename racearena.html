@@ -80,8 +80,8 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-left">
-                                        <h3 class="text-white">Flux Wallet</h3>
-                                        <p class="text-muted"><i>Custom Interface for <a href="https://commonwealth.gg/" target="_blank">Commonwealth.gg</a></i></p>
+                                        <h3 class="text-white">Race Arena</h3>
+                                        <p class="text-muted"><i>Will you be the chosen one?</i></p>
                                     </div>
                                 </div>
                             </div>
@@ -91,19 +91,19 @@
                     
                     <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-warning"></i> My Wallet</div>
+                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-warning"></i> Game Information</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropTokens"></span> P3C <small>(<span id="myETCValue"></span> ETC)</small></h4>
-                                            <small class="text-muted">My Balance</small>
+                                            <h4 class="text-white"><span id="p3c"></span></h4>
+                                            <small class="text-muted">Arena Holdings</small>
                                             <br />
                                         </div>
                                         
                                         <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropDividends" class=""></span> ETC</h4>
-                                            <small class="text-muted">My Dividends</small>
+                                            <h4 class="text-white"><span id="sac"></span></h4>
+                                            <small class="text-muted">Next Loser&apos;s Prize</small>
                                             <br />
                                         </div>
                                     </div>
@@ -113,11 +113,11 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="reinvest" class="btn btn-block btn-sm btn-warning rcAll"><i class="recycle icon"></i>Compound Dividends</button>
+                                            <button type="button" id="small" onclick="small()" disabled="true" class="btn btn-block btn-sm btn-warning rcAll" role="button">Small Race (0.1 ETC)</button>
                                         </div>
                                         
                                         <div class="col text-center">
-                                            <button id="withdraw" class="btn btn-block btn-sm btn-warning rcAll"><i class="money bill alternate  icon"></i>Take Dividends</button>
+                                            <button type="button" class="btn btn-block btn-sm btn-warning rcAll" role="button" id="medium" onclick="medium()" disabled="true">Big Race (0.5 ETC)</button>
                                         </div>
                                     </div>
                                 </div>
@@ -128,201 +128,142 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-success"></i> Buy P3C</div>
-                            <div class="card-body">
+                            <div class="card-header glassPanel rcTop text-white"><span id="status" style="text-align: center"></span></div>
+                            <div class="card-body text-white">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h2><span id="tokenBuyGet" class="text-success">0.0000</span></h2>
-                                            <small class="text-muted">Current Price of 1 P3C</small>
+                                            <h4 class="text-white"><span id="stage"></span></h4>
+                                            <small class="text-muted">Current Race</small>
+                                            <br />
                                         </div>
                                     </div>
-
+                                    <br />
+                                    
                                     <div class="row">
                                         <div class="col text-center">
-                                            <input placeholder="ETC to Spend..." type="text" id="buyInput" class="form-control rcAll" />
+                                            <p id="players" style="text-align:center; font-size: 12px;"></p>
                                         </div>
                                     </div>
-
+                                    
                                     <div class="row">
                                         <div class="col text-center">
-                                            <span id="buyAmount"></span>
+                                            <p id="playerJoined" style="text-align: center"></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="buy" class="btn btn-block btn-sm btn-success rcAll">Buy P3C</button>
-                                        </div>
+                            <div class="card-footer glassPanel rcBottom text-white">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-block btn-sm btn-success rcAll text-dark" id="offer" onclick="offer()" disabled="true">
+                                            JOIN RACE
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-block btn-sm btn-primary rcAll text-white" role="button" id="offervault" onclick="offervault()" disabled="true"></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-danger"></i> Sell P3C</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h2><span id="tokenSellGet" class="text-danger">0.0000</span></h2>
-                                            <small class="text-muted">Current Value of 1 P3C</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input placeholder="P3C to Sell..." type="text" id="sellInput" class="form-control rcAll" />
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <span id="sellAmount"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <button id="sell" class="btn btn-block btn-sm btn-danger rcAll">Sell P3C</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
                     </div>
                     
                     <div class="col-md-6">
                         <div class="card glassPanel rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
-                            <div class="card-body">
+                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-flag-checkered text-primary"></i> How it Works</div>
+                            <div class="card-body text-white">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col text-center text-white">
-                                            <b>Your Crop Address:</b><br />
-                                            <small><span id="myCropAddress" class="approx"></span></small><br />
-                                            <br />
-                                            <p>When others use your Referral Link to Buy P3C, you get a special bonus! Be sure to share it around on all your Social Media!</p>
+                                        <div class="col text-center">
+                                            <p class="text-center">
+                                                <span id="playersize"></span>, <span id="offersize" class="text-white"></span><br />
+                                                <br />
+                                                
+                                                <span id="winnings"></span><br />
+                                                
+                                                <br />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer glassPanel rcBottom text-white">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-info rcAll text-white" href="#" target="_blank">View Small Contract</a>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-info rcAll text-white" href="#" target="_blank">View Big Contract</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card glassPanel rcAll">
+                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-share-alt text-info"></i> Your Wallet</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="myCropDividends"></span> ETC</h4>
+                                            <small class="text-muted">Your Dividends</small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="earnings"></span></h4>
+                                            <small class="text-muted">Your Earnings</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
-                                                <i class="copy icon"></i> Copy Address
-                                            </button>
-                                        </div>
-
-                                        <div class="col text-center">
-                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
-                                                <i class="copy icon"></i> Copy Link
-                                            </button>
+                                            <button type="button" id="validate" rel="tooltip" title="Only validate once! Once the transaction is confirmed, either join the next race, withdraw earnings or wait. Validating more than once won't move the game forward and only costs you gas fees!" data-placement="top" onclick="validate()" hidden="true" disabled="true" class="btn btn-warning" role="button"></button>
                                         </div>
                                     </div>
+                                    
+                                    <div class="row">
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-block btn-sm btn-success rcAll text-dark" role="button" id="withdrawArenaDivs" onclick="withdrawArenaDivs()"></button>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
                         <br />
                     </div>
                 
-                </div>
- 
-                <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card glassPanel rcAll">
+                            <div class="card-header glassPanel rcTop text-white">
+                                <i class="fas fa-dollar-sign text-danger"></i> Recent Losers
+                            </div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="rainMakerTokens"></span> P3C
-                                            </h4>
-                                            <small class="text-muted">Price Floor</small>
-                                            <br />
+                                            <div id="history"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <a id="rainMaker" class="btn btn-block btn-sm btn-secondary rcAll">
-                                                Raise Floor (<span id="rainMakerDividends"></span> ETC)
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-body">
+                            <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="diviesBalance"></span> ETC
-                                            </h4>
-                                            <small class="text-muted">Divies</small>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <a id="distribute" class="btn btn-block btn-sm btn-secondary rcAll">
-                                                Split Divies
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="etcInContract">0</span>
-                                            </h4>
-                                            <small class="text-muted">Vault</small>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <a class="btn btn-block btn-sm btn-secondary rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -511,5 +452,6 @@
         <script src="assets/lib/masternode.js"></script>
         <script src="assets/lib/use.js"></script>
         <script src="assets/lib/sponsor.js"></script>
+        <script src="assets/lib/arena.js"></script>
     </body>
 </html>
