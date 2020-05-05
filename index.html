@@ -48,7 +48,15 @@
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="#" data-target="#transferModal" data-toggle="modal"><i class="fas fa-arrow-right text-white"></i> Transfer P3C</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-target="#buyETCModal" data-toggle="modal"><i class="fab fa-ethereum text-white"></i> Buy ETC</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-toolbox text-white"></i> Services</a>
+                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown04">
+                                <a class="dropdown-item text-white" href="broadcast.html"><i class="fas fa-broadcast-tower text-white"></i> Broadcaster</a>
+                                <a class="dropdown-item text-white" href="#" data-target="#buyETCModal" data-toggle="modal"><i class="fab fa-ethereum text-white"></i> Buy ETC</a>
+                            </div>
+                        </li>
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-dice text-white"></i> Games</a>
                             <div class="dropdown-menu bg-primary" aria-labelledby="dropdown03">
@@ -90,7 +98,7 @@
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-warning rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-warning"></i> My Wallet</div>
                             <div class="card-body">
                                 <div class="container">
@@ -129,7 +137,7 @@
                 
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-success rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-success"></i> Buy P3C</div>
                             <div class="card-body">
                                 <div class="container">
@@ -167,7 +175,7 @@
                     </div>
                     
                     <div class="col-md-3">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-danger rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-danger"></i> Sell P3C</div>
                             <div class="card-body">
                                 <div class="container">
@@ -205,7 +213,7 @@
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-info rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
                             <div class="card-body">
                                 <div class="container">
@@ -244,21 +252,18 @@
  
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white">Price Floor</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="rainMakerTokens"></span> P3C
-                                            </h4>
-                                            <small class="text-muted">Price Floor</small>
-                                            <br />
+                                            <h4 class="text-white"><span id="rainMakerTokens"></span> P3C</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer rcBottom">
+                            <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
@@ -274,21 +279,18 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white">Divies</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="diviesBalance"></span> ETC
-                                            </h4>
-                                            <small class="text-muted">Divies</small>
-                                            <br />
+                                            <h4 class="text-white"><span id="diviesBalance"></span> ETC</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
@@ -304,21 +306,18 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="card glassPanel rcAll">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white">Vault</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <h4 class="text-white">
-                                                <span id="etcInContract">0</span>
-                                            </h4>
-                                            <small class="text-muted">Vault</small>
-                                            <br />
+                                            <h4 class="text-white"><span id="etcInContract">0</span></h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer glassPanel rcBottom">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
@@ -353,7 +352,7 @@
         <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: #000;">
             <a class="navbar-brand" href="#"></a>
             <ul class="navbar-nav mr-auto ml-auto">
-                <div id="current" class="text-white"></div>
+                <span id="current" class="text-white"></span>
             </ul>
         </nav>
         

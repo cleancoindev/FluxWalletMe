@@ -20,12 +20,12 @@ ad.globalAd.call(function (err, result) {
 });
 
 ad.owner.call(function (err, result) {
-	$("#owner").html("<b>Address:</b> " + result);
+	$("#owner").html("<b>Purchased by:</b> " + result);
 });
 
 ad.purchasePrice.call(function (err, result) {
 	price = parseFloat(web3.fromWei(result.toNumber()))
-	$("#purchasePrice").html("<br><b>Paid:</b> " + price + " ETC");
+	$("#purchasePrice").html(price + " ETC");
 });
 
 ad.purchaseTime.call(function (err, result) {
