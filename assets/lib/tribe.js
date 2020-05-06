@@ -179,7 +179,6 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
             }
         }
     )
-    // window.location.replace('https://commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
 }
 
 function buyIn(tribe,activeTribeCost) {

@@ -40,7 +40,7 @@
     <body class="wallpaper">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="40px" height="40px" /></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="30px" height="30px" /> FluxWallet</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,7 +68,6 @@
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/Tk8ynre" target="_blank"><i class="fab fa-discord text-white"></i> Discord</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://twitter.com/ArcadiumETC" target="_blank"><i class="fab fa-twitter text-white"></i> Twitter</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts" target="_blank"><i class="fas fa-search-dollar text-white"></i> Contract</a></li>
@@ -78,7 +77,7 @@
         </header>
         
         <br /><br /><br />
-        <br /><br /><br />
+        <br /><br />
         
         <main>
             <div class="container">
@@ -104,13 +103,18 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropTokens"></span> P3C <small>(<span id="myETCValue"></span> ETC)</small></h4>
+                                            <h4 class="text-white">
+                                                <span id="myCropTokens"></span> P3C<br />
+                                                <small><span class="text-success"><span id="myETCValue"></span> ETC</span> | <span id="myTokensValue" class="text-warning"></span></small></h4>
                                             <small class="text-muted">My Balance</small>
                                             <br />
                                         </div>
                                         
                                         <div class="col col-sm-6 text-center">
-                                            <h4 class="text-white"><span id="myCropDividends" class=""></span> ETC</h4>
+                                            <h4 class="text-white">
+                                                <span id="myCropDividends" class=""></span> ETC<br />
+                                                <small class="text-warning"><span id="myDividendsValue"></span></small>
+                                            </h4>
                                             <small class="text-muted">My Dividends</small>
                                             <br />
                                         </div>
@@ -144,6 +148,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h2><span id="tokenBuyGet" class="text-success">0.0000</span></h2>
+                                            <small class="text-white"><span id="tokenUSDBuyPrice"></span> USD</small><br />
                                             <small class="text-muted">Current Price of 1 P3C</small>
                                         </div>
                                     </div>
@@ -182,6 +187,7 @@
                                     <div class="row">
                                         <div class="col text-center">
                                             <h2><span id="tokenSellGet" class="text-danger">0.0000</span></h2>
+                                            <small class="text-white"><span id="tokenUSDSellPrice"></span> USD</small><br />
                                             <small class="text-muted">Current Value of 1 P3C</small>
                                         </div>
                                     </div>
@@ -231,13 +237,13 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
+                                            <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copyAddressButton" data-clipboard-text="">
                                                 <i class="copy icon"></i> Copy Address
                                             </button>
                                         </div>
 
                                         <div class="col text-center">
-                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll copybutton" data-clipboard-text="">
+                                            <button id="copyMNButton" class="btn btn-block btn-sm btn-info rcAll copyLinkButton" data-clipboard-text="">
                                                 <i class="copy icon"></i> Copy Link
                                             </button>
                                         </div>
@@ -338,8 +344,15 @@
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
                         <p class="text-white">
-                            This platform is provided &quot;As-Is&quot;, with <i>NO guarantee of profit or gain</i>. Commonwealth.gg and Arcadium Wallet are experimental technologies, and as such, you should only invest what you can afford to lose. Developers and associates will not be held responsible for any losses you may incur.
+                            This platform is provided &quot;As-Is&quot;, with <i>NO guarantee of profit or gain</i>. Commonwealth.gg and  FluxWallet.me are experimental technologies, and as such, you should only invest what you can afford to lose. Developers and associates will not be held responsible for any losses you may incur.
                         </p>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <small class="text-white">All prices shown are in USD, unless otherwise indicated.</small>
                     </div>
                 </div>
             </div>
@@ -506,6 +519,7 @@
         <script src="assets/lib/util.js"></script>
         <script src="assets/lib/contracts.js"></script>
         <script src="assets/lib/pure.js"></script>
+        <script src="assets/lib/prices.js"></script>
         <script src="assets/lib/rainmaker.js"></script>
         <script src="assets/lib/masternode.js"></script>
         <script src="assets/lib/use.js"></script>

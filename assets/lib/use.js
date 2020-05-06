@@ -125,3 +125,13 @@ new ClipboardJS('.copybutton');
 $('.copybutton').on('click', function (){
   alertify.success('Copied', 2)
 })
+
+new ClipboardJS('.copyAddressButton');
+$('.copyAddressButton').on('click', function() {
+    alertify.success('Copied Address', 2)
+});
+
+new ClipboardJS('.copyLinkButton');
+$('.copyLinkButton').on('click', function() {
+    alertify.success('Copied Link', 2)
+});
