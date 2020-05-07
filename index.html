@@ -47,8 +47,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="#" data-target="#transferModal" data-toggle="modal"><i class="fas fa-arrow-right text-white"></i> Transfer P3C</a></li>
-                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-toolbox text-white"></i> Services</a>
                             <div class="dropdown-menu bg-primary" aria-labelledby="dropdown04">
@@ -83,26 +81,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="jumbotron glassPanel rcAll">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col text-left">
-                                        <h3 class="text-white">Flux Wallet</h3>
-                                        <p class="text-muted"><i>Custom Interface for <a href="https://commonwealth.gg/" target="_blank">Commonwealth.gg</a></i></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div class="card glassPanel border-warning rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-warning"></i> My Wallet</div>
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-wallet text-white"></i> My Wallet</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col col-sm-6 text-center">
+                                            <img src="assets/img/whale.png" width="40px" height="40px" />
                                             <h4 class="text-white">
                                                 <span id="myCropTokens"></span> P3C<br />
                                                 <small><span class="text-success"><span id="myETCValue"></span> ETC</span> | <span id="myTokensValue" class="text-warning"></span></small></h4>
@@ -111,6 +96,7 @@
                                         </div>
                                         
                                         <div class="col col-sm-6 text-center">
+                                            <img src="assets/img/etc-logo-transparent.png" width="25px" height="40px" />
                                             <h4 class="text-white">
                                                 <span id="myCropDividends" class=""></span> ETC<br />
                                                 <small class="text-warning"><span id="myDividendsValue"></span></small>
@@ -125,11 +111,11 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button id="reinvest" class="btn btn-block btn-sm btn-warning rcAll"><i class="recycle icon"></i>Compound Dividends</button>
+                                            <button id="reinvest" class="btn btn-block btn-sm btn-success rcAll"><i class="recycle icon"></i>Compound</button>
                                         </div>
                                         
                                         <div class="col text-center">
-                                            <button id="withdraw" class="btn btn-block btn-sm btn-warning rcAll"><i class="money bill alternate  icon"></i>Take Dividends</button>
+                                            <button id="withdraw" class="btn btn-block btn-sm btn-danger rcAll"><i class="money bill alternate  icon"></i>Withdraw</button>
                                         </div>
                                     </div>
                                 </div>
@@ -137,9 +123,6 @@
                         </div>
                         <br />
                     </div>
-                </div>
-                
-                <div class="row">
                     <div class="col-md-3">
                         <div class="card glassPanel border-success rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-success"></i> Buy P3C</div>
@@ -178,7 +161,6 @@
                         </div>
                         <br />
                     </div>
-                    
                     <div class="col-md-3">
                         <div class="card glassPanel border-danger rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-danger"></i> Sell P3C</div>
@@ -218,6 +200,9 @@
                         <br />
                     </div>
                     
+                </div>
+                
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card glassPanel border-info rcAll">
                             <div class="card-header glassPanel rcTop text-white"><i class="fas fa-share-alt text-info"></i> Referral Link</div>
@@ -255,8 +240,35 @@
                             </div>
                         </div>
                         <br />
-                        <a class="btn btn-lg btn-block btn-primary rcAll text-white" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a>
+                        <a class="btn btn-lg btn-block btn-primary rcAll text-white" href="#" data-target="#marketdatachartModal" data-toggle="modal"><i class="fas fa-chart-bar text-white"></i> View Market Data Chart</a><br />
                     </div>
+                    <div class="col-md-6">
+                            <div class="card glassPanel border-warning rcAll">
+                                <div class="card-header glassPanel rcTop text-white"><i class="fas fa-arrow-right text-warning"></i> Transfer P3C</div>
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center text-white">
+                                                <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
+                                                <br />
+                                                <input type="text" id="transferTokenCount" placeholder="Amount of Points" class="form-control rcAll">
+                                                <b>Please ensure details are correct before transferring!</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer glassPanel rcBottom">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <button id="transfer" class="btn btn-block btn-sm btn-warning rcAll">Transfer P3C</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
                 
                 </div>
  
@@ -372,40 +384,6 @@
                 <span id="current" class="text-white"></span>
             </ul>
         </nav>
-        
-        <!-- Transfer Modal -->
-        <div class="modal" id="transferModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-primary rcAll">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title text-white">Transfer P3C</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <input type="text" id="transferAddress" placeholder="Recipient Address" class="form-control rcAll">
-                                    <br />
-                                    <input type="text" id="transferTokenCount" placeholder="Amount of Points" class="form-control rcAll"><br />
-                                    <button id="transfer" class="btn btn-block btn-sm btn-success rcAll">Transfer P3C</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         
         <!-- QR Code Modal -->
         <div class="modal" id="qrcodeModal">
