@@ -225,9 +225,6 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center text-white">
-                                            <b>Your Crop Address:</b><br />
-                                            <small><span id="myCropAddress" class="approx"></span></small><br />
-                                            <br />
                                             <p>When others use your Referral Link to Buy P3C, you get a special bonus! Be sure to share it around on all your Social Media!</p>
                                         </div>
                                     </div>
@@ -239,6 +236,12 @@
                                         <div class="col text-center">
                                             <button id="copyAddressButton" class="btn btn-block btn-sm btn-info rcAll copyAddressButton" data-clipboard-text="">
                                                 <i class="copy icon"></i> Copy Address
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <button id="qrCodeButton" class="btn btn-block btn-sm btn-info rcAll" data-target="#qrcodeModal" data-toggle="modal">
+                                                <i class="copy icon"></i> Show QR Code
                                             </button>
                                         </div>
 
@@ -389,6 +392,41 @@
                                     <br />
                                     <input type="text" id="transferTokenCount" placeholder="Amount of Points" class="form-control rcAll"><br />
                                     <button id="transfer" class="btn btn-block btn-sm btn-success rcAll">Transfer P3C</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- QR Code Modal -->
+        <div class="modal" id="qrcodeModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Receive P3C</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img id="qrImage" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" class="rcAll" alt="Your Crop Address as a QR Code"><br />
+                                    <p class="text-white">
+                                        <b>Your Crop Address: </b>
+                                        <span id="myCropAddress" class="approx"></span><br />
+                                    </p>
                                 </div>
                             </div>
                         </div>

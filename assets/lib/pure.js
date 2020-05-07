@@ -30,7 +30,8 @@ function activateUI(cropAddress) {
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
     $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://fluxwallet.me/?ref=' + myCropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://fluxwallet.me/?ref=' + myCropAddress);
+    $("#copyMNButton").attr("data-clipboard-text", 'https://fluxwallet.me/?ref=' + myCropAddress)
+    $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
 
     // Enable buttons
     $('#buy').prop("disabled", false);
