@@ -2,8 +2,7 @@
 if (typeof web3 == 'undefined') {
     displayError(
         `
-        <div class="custom-computer only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETC Wallet</a></div>
-        <div class="mobile only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">ETC Wallet</a></div>
+        <span>To Use, Install an <a target="_blank" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETC Wallet</a></span>
         `
     )
 } else {
