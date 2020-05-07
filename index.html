@@ -87,19 +87,26 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col col-sm-6 text-center">
-                                            <img src="assets/img/whale.png" width="40px" height="40px" />
                                             <h4 class="text-white">
-                                                <span id="myCropTokens"></span> P3C<br />
-                                                <small><span class="text-success"><span id="myETCValue"></span> ETC</span> | <span id="myTokensValue" class="text-warning"></span></small></h4>
+                                                <span id="myTokensValue" class="text-white"></span> USD
+                                                <br />
+                                                <small>
+                                                    <img src="assets/img/whale.png" width="20px" height="20px" />
+                                                    <span id="myCropTokens"></span> P3C
+                                                </small>
+                                            </h4>
                                             <small class="text-muted">My Balance</small>
                                             <br />
                                         </div>
                                         
                                         <div class="col col-sm-6 text-center">
-                                            <img src="assets/img/etc-logo-transparent.png" width="25px" height="40px" />
                                             <h4 class="text-white">
-                                                <span id="myCropDividends" class=""></span> ETC<br />
-                                                <small class="text-warning"><span id="myDividendsValue"></span></small>
+                                                <span id="myDividendsValue"></span>
+                                                <br />
+                                                <small>
+                                                    <img src="assets/img/etc-logo-transparent.png" width="13px" height="20px" />
+                                                    <span id="myCropDividends"></span> ETC
+                                                </small>
                                             </h4>
                                             <small class="text-muted">My Dividends</small>
                                             <br />
@@ -277,7 +284,7 @@
                 </div>
  
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
                             <div class="card-header glassPanel rcTop text-white">Price Floor</div>
                             <div class="card-body">
@@ -293,7 +300,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <a id="rainMaker" class="btn btn-block btn-sm btn-secondary rcAll">
+                                            <a id="rainMaker" class="btn btn-block btn-sm btn-primary text-white rcAll">
                                                 Raise Floor (<span id="rainMakerDividends"></span> ETC)
                                             </a>
                                         </div>
@@ -304,7 +311,7 @@
                         <br />
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
                             <div class="card-header glassPanel rcTop text-white">Divies</div>
                             <div class="card-body">
@@ -320,7 +327,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <a id="distribute" class="btn btn-block btn-sm btn-secondary rcAll">
+                                            <a id="distribute" class="btn btn-block btn-sm btn-primary text-white rcAll">
                                                 Split Divies
                                             </a>
                                         </div>
@@ -331,9 +338,34 @@
                         <br />
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-white">Vault</div>
+                            <div class="card-header glassPanel rcTop text-white">Your HODL</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="myETCValue">0</span> ETC</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer glassPanel rcBottom">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a id="blockscoutLink" class="btn btn-block btn-sm btn-primary text-white rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">Explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="card glassPanel border-white rcAll">
+                            <div class="card-header glassPanel rcTop text-white">Commonwealth.gg Vault</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
@@ -347,7 +379,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-sm btn-secondary rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
+                                            <a class="btn btn-block btn-sm btn-primary text-white rcAll" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts">View Contract</a>
                                         </div>
                                     </div>
                                 </div>

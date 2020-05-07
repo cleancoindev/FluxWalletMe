@@ -32,6 +32,7 @@ function activateUI(cropAddress) {
     $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://fluxwallet.me/?ref=' + myCropAddress + '</a>')
     $("#copyMNButton").attr("data-clipboard-text", 'https://fluxwallet.me/?ref=' + myCropAddress)
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
+    $("#blockscoutLink").replaceWith('<a id="blockscoutLink" target="_blank" class="btn btn-block btn-sm btn-primary text-white rcAll" href="https://blockscout.com/etc/mainnet/address/'+ myCropAddress +'">Explore</a>');
 
     // Enable buttons
     $('#buy').prop("disabled", false);
@@ -62,7 +63,7 @@ function getMyCropDividends() {
                 $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + "0" + "</b>")
             }
             if (change) {
-                amount = web3.fromWei(myCropDividends).toFixed(8)
+                amount = web3.fromWei(myCropDividends).toFixed(3)
                 $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + amount  + "</b>")
                 $('#myCropDividends').transition({
                     animation: 'flash',
