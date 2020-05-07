@@ -1,5 +1,7 @@
 var p3cContract = web3.eth.contract(contracts.p3c.abi).at(contracts.p3c.address);
 
+drawChart(90);
+
 function setMarketCap(usdPrice) {
   p3cContract.totalEthereumBalance.call(function (err, result) {
     if (!err) {
@@ -23,7 +25,7 @@ function setSellPrice(usdPrice) {
   p3cContract.sellPrice(function (e, r) {
     sellPrice = web3.fromWei(r)
     $('#tokenSellGet').text(sellPrice.toFixed(4) + ' ETC')
-    $('#tokenUSDSellPrice').text('$' + Number((sellPrice * usdPrice).toFixed(6)))
+    $('#tokenUSDSellPrice').text('$' + (sellPrice * usdPrice).toFixed(2))
   })
 }
 setSellPrice(0)
@@ -32,11 +34,13 @@ var buyPrice;
 function setBuyPrice(usdPrice) {
   p3cContract.buyPrice(function (e, r) {
     buyPrice = web3.fromWei(r)
+    // alert((buyPrice * usdPrice).toFixed(2))
     $('#tokenBuyGet').text(buyPrice.toFixed(4) + ' ETC')
-    $('#tokenUSDBuyPrice').text('$' + Number((buyPrice * usdPrice).toFixed(6)))
+    $('#tokenUSDBuyPrice').text('$' + (buyPrice * usdPrice).toFixed(2))
   })
 }
 setBuyPrice(0)
+
 
 var myUSDValue = 0
 function setTokensPrice(usdPrice){
@@ -56,7 +60,6 @@ function updateEtcPrice(portfolio) {
   $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD', function (result) {
     if (result !== null){
       var usd = result.USD
-
       usdPrice = parseFloat(usd)
       setBuyPrice(usdPrice)
       setSellPrice(usdPrice)
@@ -64,6 +67,9 @@ function updateEtcPrice(portfolio) {
 
       setTokensPrice(usdPrice)
       setDividendsPrice(usdPrice)
+      if (portfolio === true){
+        setPortfolio(myCropAddress)
+      }
     }
   })
 }
@@ -80,7 +86,7 @@ $('#buyInput').on('input change', function () {
   var value = parseFloat($(this).val())
   if (value > 0) {
     buyAmount = numberWithCommas((value / buyPrice).toFixed(1))
-    $('#buyAmount').text("Approx. " + buyAmount + " P3C")
+    $('#buyAmount').text("Approx. " + buyAmount + " Points")
   } else {
     $('#buyAmount').hide()
   }
