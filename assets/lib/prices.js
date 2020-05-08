@@ -52,7 +52,7 @@ function setTokensPrice(usdPrice){
 var myDividendUSDValue = 0
 function setDividendsPrice(usdPrice){
   value =  Number($('#myCropDividends').text()) * usdPrice
-  $('#myDividendsValue').text('$' + value.toFixed(5))
+  $('#myDividendsValue').text('$' + value.toFixed(2))
   myDividendUSDValue = value.toFixed(5)
 }
 
