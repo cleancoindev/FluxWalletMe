@@ -1,19 +1,3 @@
-window.onload = function() {
-    QRCodeScanner({
-        element: document.getElementById('qrcodescanner'),
-        width: 400,
-        height: 300,
-        onScanSuccess: function(result) {
-            console.log('Scan Success', result);
-            document.getElementById('message').textContent = result;
-        },
-        onScanError: function(error) {
-            console.log('Scan Error', error);
-            document.getElementById('message').textContent = 'No QR Code found';
-        }
-    });
-}
-
 function QRCodeScanner(options) {
   const rootElement = options.element;
   const width = options.width;
@@ -138,11 +122,7 @@ function QRCodeScanner(options) {
       retrieveVideoInputs();
     }
 
-      const stream = await navigator.mediaDevices.getUserMedia({video: true});
-      const video = document.createElement('video');
-      video.srcObject = mediaStream;
-      
-    HTMLMediaElement.srcObject = (window.URL && window.URL.createObjectURL(mediaStream)) || mediaStream;
+    videoElement.srcObject = stream;
     scheduleScan();
   }
 

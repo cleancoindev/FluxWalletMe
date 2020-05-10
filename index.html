@@ -474,36 +474,11 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <h3 class="text-white">Scan QR Code</h3>
-                                    <video muted playsinline id="qr-video" width="100%"></video>
-                                    <select id="inversion-mode-select">
-                                        <option value="original">Scan original (dark QR code on bright background)</option>
-                                        <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
-                                        <option value="both">Scan both</option>
-                                    </select>
-                                    <br />
+                                    <div id="qrcodescanner"></div>
+                                    <div id="message" class="text-white"></div>
                                 </div>
                             </div>
                             <br />
-                            
-                            <div class="row">
-                                <div class="col text-center">
-                                    <b class="text-white">Detected QR code: </b>
-                                    <span id="cam-qr-result">None</span>
-                                    <br />
-                                    <b class="text-white">Last detected at: </b>
-                                    <span id="cam-qr-result-timestamp"></span>
-                                </div>
-                            </div>
-                            <br />
-                            
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h1 class="text-white">Scan from File:</h1>
-                                    <input type="file" id="file-selector" class="form-control">
-                                    <b class="text-white">Detected QR code: </b>
-                                    <span id="file-qr-result" class="text-white">None</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -683,6 +658,8 @@
         <script src="assets/js/web3.min.js"></script>
         <script src="assets/js/clipboard.min.js"></script>
         <script src="assets/js/lodash.min.js"></script>
+        <script src="assets/js/llqrcode.js"></script>
+        <script src="assets/js/jsqrcode-camera.js"></script>
         
         <script src="assets/lib/util.js"></script>
         <script src="assets/lib/home.js"></script>
@@ -696,47 +673,26 @@
         <script src="assets/lib/prices.js"></script>
         <script src="assets/lib/loader.js"></script>
         
-        <script type="module">
-            import QrScanner from "/assets/js/qr-scanner.min.js";
-            QrScanner.WORKER_PATH = 'assets/js/qr-scanner-worker.min.js';
-
-            const video = document.getElementById('qr-video');
-            const camHasCamera = document.getElementById('cam-has-camera');
-            const camQrResult = document.getElementById('cam-qr-result');
-            const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
-            const fileSelector = document.getElementById('file-selector');
-            const fileQrResult = document.getElementById('file-qr-result');
-
-            function setResult(label, result) {
-                label.textContent = result;
-                camQrResultTimestamp.textContent = new Date().toString();
-                label.style.color = 'teal';
-                clearTimeout(label.highlightTimeout);
-                label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+        <script>
+            window.onload = function() {
+                QRCodeScanner({
+                    element: document.getElementById('qrcodescanner'),
+                    width: 400,
+                    height: 300,
+                    onScanSuccess: function(result) {
+                        console.log('Scan Success', result);
+                        $("#transferAddress").val(result);
+                        alertify.success('Scanned QR Code!');
+                        document.getElementById('message').textContent = result;
+                        $('#qrscanModal').modal('hide');
+                        $('.modal-backdrop').hide();
+                    },
+                    onScanError: function(error) {
+                        console.log('Scan Error', error);
+                        document.getElementById('message').textContent = 'No QR Code found';
+                    }
+                });
             }
-
-            // ####### Web Cam Scanning #######
-
-            QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
-
-            const scanner = new QrScanner(video, result => setResult(camQrResult, result));
-            scanner.start();
-
-            document.getElementById('inversion-mode-select').addEventListener('change', event => {
-                scanner.setInversionMode(event.target.value);
-            });
-
-            // ####### File Scanning #######
-
-            fileSelector.addEventListener('change', event => {
-                const file = fileSelector.files[0];
-                if (!file) {
-                    return;
-                }
-                QrScanner.scanImage(file)
-                    .then(result => setResult(fileQrResult, result))
-                    .catch(e => setResult(fileQrResult, e || 'No QR code found.'));
-            });
         </script>
     </body>
 </html>
