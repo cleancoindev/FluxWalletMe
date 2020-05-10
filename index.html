@@ -272,6 +272,9 @@
                                             <div class="col text-center">
                                                 <button id="transfer" class="btn btn-block btn-sm btn-warning rcAll">Transfer P3C</button>
                                             </div>
+                                            <div class="col text-center">
+                                                <button id="qrCamBtn" class="btn btn-block btn-sm btn-warning rcAll" data-target="#qrscanModal" data-toggle="modal">Scan QR Code</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -389,9 +392,6 @@
             </div>
         </main>
         
-        <div id="qrcodescanner"></div>
-        <div id="message"></div>
-        
         <footer>
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
@@ -456,6 +456,66 @@
                 </div>
             </div>
         </div>
+        
+        <!-- QR Scan Modal -->
+        <div class="modal" id="qrscanModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Transfer P3C</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3 class="text-white">Scan QR Code</h3>
+                                    <video muted playsinline id="qr-video" width="100%"></video>
+                                    <select id="inversion-mode-select">
+                                        <option value="original">Scan original (dark QR code on bright background)</option>
+                                        <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
+                                        <option value="both">Scan both</option>
+                                    </select>
+                                    <br />
+                                </div>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <b class="text-white">Detected QR code: </b>
+                                    <span id="cam-qr-result">None</span>
+                                    <br />
+                                    <b class="text-white">Last detected at: </b>
+                                    <span id="cam-qr-result-timestamp"></span>
+                                </div>
+                            </div>
+                            <br />
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h1 class="text-white">Scan from File:</h1>
+                                    <input type="file" id="file-selector" class="form-control">
+                                    <b class="text-white">Detected QR code: </b>
+                                    <span id="file-qr-result" class="text-white">None</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
         
         <!-- Market Data Modal -->
         <div class="modal" id="marketdatachartModal">
@@ -635,6 +695,48 @@
         <script src="assets/lib/charts.js"></script>
         <script src="assets/lib/prices.js"></script>
         <script src="assets/lib/loader.js"></script>
-        <script src="assets/lib/qrScanner.js"></script>
+        
+        <script type="module">
+            import QrScanner from "/assets/js/qr-scanner.min.js";
+            QrScanner.WORKER_PATH = 'assets/js/qr-scanner-worker.min.js';
+
+            const video = document.getElementById('qr-video');
+            const camHasCamera = document.getElementById('cam-has-camera');
+            const camQrResult = document.getElementById('cam-qr-result');
+            const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
+            const fileSelector = document.getElementById('file-selector');
+            const fileQrResult = document.getElementById('file-qr-result');
+
+            function setResult(label, result) {
+                label.textContent = result;
+                camQrResultTimestamp.textContent = new Date().toString();
+                label.style.color = 'teal';
+                clearTimeout(label.highlightTimeout);
+                label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+            }
+
+            // ####### Web Cam Scanning #######
+
+            QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
+
+            const scanner = new QrScanner(video, result => setResult(camQrResult, result));
+            scanner.start();
+
+            document.getElementById('inversion-mode-select').addEventListener('change', event => {
+                scanner.setInversionMode(event.target.value);
+            });
+
+            // ####### File Scanning #######
+
+            fileSelector.addEventListener('change', event => {
+                const file = fileSelector.files[0];
+                if (!file) {
+                    return;
+                }
+                QrScanner.scanImage(file)
+                    .then(result => setResult(fileQrResult, result))
+                    .catch(e => setResult(fileQrResult, e || 'No QR code found.'));
+            });
+        </script>
     </body>
 </html>
