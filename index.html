@@ -67,7 +67,7 @@
                     
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-white"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/ArcadiumNetwork" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac/contracts" target="_blank"><i class="fas fa-search-dollar text-white"></i> Contract</a></li>
                     </ul>
                 </div>
@@ -272,9 +272,6 @@
                                             <div class="col text-center">
                                                 <button id="transfer" class="btn btn-block btn-sm btn-warning rcAll">Transfer P3C</button>
                                             </div>
-                                            <div class="col text-center">
-                                                <button id="qrCamBtn" class="btn btn-block btn-sm btn-warning rcAll" data-target="#qrscanModal" data-toggle="modal">Scan QR Code</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -457,41 +454,6 @@
             </div>
         </div>
         
-        <!-- QR Scan Modal -->
-        <div class="modal" id="qrscanModal">
-            <div class="modal-dialog">
-                <div class="modal-content bg-primary rcAll">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title text-white">Transfer P3C</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h3 class="text-white">Scan QR Code</h3>
-                                    <div id="qrcodescanner"></div>
-                                    <div id="message" class="text-white"></div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-block btn-sm btn-danger rcAll" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
-        
         <!-- Market Data Modal -->
         <div class="modal" id="marketdatachartModal">
             <div class="modal-dialog">
@@ -658,8 +620,6 @@
         <script src="assets/js/web3.min.js"></script>
         <script src="assets/js/clipboard.min.js"></script>
         <script src="assets/js/lodash.min.js"></script>
-        <script src="assets/js/llqrcode.js"></script>
-        <script src="assets/js/jsqrcode-camera.js"></script>
         
         <script src="assets/lib/util.js"></script>
         <script src="assets/lib/home.js"></script>
@@ -672,27 +632,5 @@
         <script src="assets/lib/charts.js"></script>
         <script src="assets/lib/prices.js"></script>
         <script src="assets/lib/loader.js"></script>
-        
-        <script>
-            window.onload = function() {
-                QRCodeScanner({
-                    element: document.getElementById('qrcodescanner'),
-                    width: 400,
-                    height: 300,
-                    onScanSuccess: function(result) {
-                        console.log('Scan Success', result);
-                        $("#transferAddress").val(result);
-                        alertify.success('Scanned QR Code!');
-                        document.getElementById('message').textContent = result;
-                        $('#qrscanModal').modal('hide');
-                        $('.modal-backdrop').hide();
-                    },
-                    onScanError: function(error) {
-                        console.log('Scan Error', error);
-                        document.getElementById('message').textContent = 'No QR Code found';
-                    }
-                });
-            }
-        </script>
     </body>
 </html>
