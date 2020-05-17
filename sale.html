@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@FluxWallet" />
+        <meta name="twitter:title" content="FluxLauncher" />
+        <meta name="twitter:description" content="Token Sale Dapp for projects on the ETH and ETC blockchains" />
+        <meta name="twitter:image" content="https://fluxwallet.me/assets/img/coin.png"/>
+        
+        <meta property="og:url" content="https://fluxwallet.me" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="FluxLauncher" />
+        <meta property="og:description" content="Token Sale Dapp for projects on the ETH and ETC blockchains" />
+        <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
+        
+        <title>FluxWallet | Token Sale Dapp</title>
+        
+        <meta charset="utf8">
+        <meta name="description" content="A new vision for the crown jewel of Arcadium Network">
+        <meta name="keywords" content="Flux, Wallet, Token, Sale, Dapp, ICO, Cryptocurrency, Bitcoin, wen, moon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        
+        <!-- Semantic Style - Replace with Bootstrap -->
+        <link rel="stylesheet" href="assets/css/semantic.min.css">
+        
+        <!-- Alertify CSS -->
+        <link rel="stylesheet" href="assets/css/alertify.min.css" />
+        <link rel="stylesheet" href="assets/css/themes/semantic.min.css" />
+        
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/hourglass.css" />
+        
+        <link rel="icon" type="image/png" href="assets/img/etc.png">
+        
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="30px" height="30px" /> FluxWallet</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cubes text-white"></i> Dapps</a>
+                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown04">
+                                <a class="dropdown-item text-white" href="pure3c.html"><i class="fas fa-coins text-white"></i> Pure3C</a>
+                                <a class="dropdown-item text-white" href="broadcast.html"><i class="fas fa-broadcast-tower text-white"></i> Broadcaster</a>
+                                <a class="dropdown-item text-white" href="sale.html"><i class="fas fa-dollar-sign text-white"></i> Buy FWT</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-dice text-danger"></i> Games</a>
+                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown03">
+                                <a class="dropdown-item text-white" href="tribes.html"><i class="fas fa-users text-white"></i> Tribes</a>
+                                <a class="dropdown-item text-white" href="powerinc.html"><i class="fas fa-bolt text-white"></i> Power Inc</a>
+                                <a class="dropdown-item text-white" href="racearena.html"><i class="fas fa-flag-checkered text-white"></i> Race Arena</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="https://www.saturn.network/token/ETC/0x6eb1846bb70356bbbe66185608ae5d5258efb3e2" target="_blank"><i class="fas fa-chart-line text-success"></i> Trade FWT</a></li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-light"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contracts.html"><i class="fas fa-search-dollar text-warning"></i> Contracts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        <main role="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="jumbotron glassPanel rcAll text-white">
+                            <div class="col text-center">
+                                <img src="assets/img/logo.png" width="100px" height="100px" />
+                                <h4 class="text-white">FluxWallet Token (FWT)</h4>
+                                <p class="text-muted">A Demo ICO Dapp and Token</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordionExample">
+                        <div class="card glassPanel rcTop">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0 text-white">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b class="text-white">What is Flux Token?</b>
+                                    </button>
+                                </h3>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        Flux token and this accompanying Dapp interface are a demonstration of a basic ICO, deployed on Ethereum Classic. It&apos;s source code is freely available on GitHub, and can even be hosted <i>for free</i> on Github Pages.<br />
+                                        <br />
+                                        While this token is deployed on Mainnet and purchaseable, please note FluxWallet.me may not have any plans for it thus far or in the future. Purchasing this token will be considered a donation to FluxWallet.me developers, and the tokens you receive will serve as a marker, that you helped FluxWallet.me become a bigger and better platform!<br />
+                                        <br />
+                                        <small><i>Thank You.</i></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b class="text-white">How does it Work?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        Upon loading this interface and logging into your Wallet, you will be able to purchase tokens by entering the desired quantity in the field below and clicking/tapping &quot;Buy Tokens&quot;.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <b class="text-white">Can I use this for my own ICO?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    <b>YES!</b> This Dapp interface is an open source creation, released for the benefit of ETC and ETH developers and projects. &quot;Token-Sale-Dapp&quot;&apos;s source code is available on <a href="https://github.com/FluxWallet" target="_blank" class="text-success">GitHub</a>, and is <i>MIT Licensed</i>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel rcBottom">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <b class="text-white">How Do I Get Started?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-success rcAll" href="#buyETCModal" data-toggle="modal" data-target="#buyETCModal">Buy some ETC</a>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-info rcAll" href="#" target="_blank">Get a Wallet</a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        
+                                        <div class="row">
+                                            <div class="col text-center text-white">
+                                                You&apos;ll need some Ethereum Classic (ETC) and a Wallet to purchase tokens or use most of the included functionality of this Dapp.<br />
+                                                <br />
+                                                <a href="https://www.saturn.network/blog/saturn-wallet/" target="_blank"><b class="text-success">Saturn Wallet</b></a>
+                                                 works with <a href="https://chrome.google.com/webstore/detail/saturn-wallet/nkddgncdjgjfcddamfgcmfnlhccnimig?hl=en" target="_blank" class="text-success">Google Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/saturn-wallet/" target="_blank" class="text-success">Firefox</a>, and is the best choice for using Ethereum and Ethereum Classic quickly, efficiently and securely on your computer.<br />
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    </div>
+                    
+                    <div class="container">
+                        
+                        
+                        <div class="row">
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card glassPanel text-white rcAll">
+                            <div class="card-header text-left">Buy Tokens</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3 class="text-white">Your FWT: <span id="owned">0</span></h3>
+                                            <small class="text-muted">Each Token costs 0.0001 ETC</small>
+                                            
+                                            <div class="bg-moon-gray br-pill h1 overflow-y-hidden mt3">
+                                                <div id="progress" class="bg-blue br-pill h1" style="width:0px"></div>
+                                            </div>
+                                            <small class="f6 black-60 db mb2 tr">
+                                                <span id="sold">0</span> / <span id="total">0</span> tokens sold so far
+                                            </small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <div id="spinner" class="mt5"><small class="text-success">Loading...</small></div>
+                                            <div id="ui">
+                                                <form id="buyForm" class="br2-ns">
+                                                    <fieldset class="cf bn ma0 pa0">
+                                                        <div class="cf">
+                                                            <label class="text-white" for="number">How many FWT will you buy today?</label>
+                                                            <input class="form-control rcAll" placeholder="Number of tokens to buy" type="number" name="number" value="1" min="1" id="number"><br />
+                                                            <input class="btn btn-block btn-md btn-success rcAll" type="submit" value="Buy Tokens">
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <p class="text-white"><b>Please purchase carefully, as there are <span class="text-danger">NO REFUNDS!</span></b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card glassPanel text-white rcAll">
+                            <div class="card-header text-left">Market Data</div>
+                            <div class="card-body text-center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h3 class="text-white"><i>What&apos;s This?</i></h3>
+                                            <p class="text-white">
+                                                This dapp also carries the ability to read Market Data from Saturn Network! If you list your token on the Saturn DEX, you will be able to pull the data from the best Buy and Sell orders, in volume and value, directly to this interface.
+                                            </p>
+                                            <small class="text-white">NOTE: There will not be any information for your token below until it is in a state of active trade on Saturn DEX.</small>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    
+                                    <hr />
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 text-center">
+                                            <h6 class="text-success"><span id="bestBuyPrice"></span> ETC</h6>
+                                            <small class="text-white">Best Buy Price</small>
+                                        </div>
+                                        
+                                        <div class="col-md-3 text-center">
+                                            <h6 class="text-success"><span id="bestBuyOrder"></span> FWT</h6>
+                                            <small class="text-white">Best Buy Order</small>
+                                        </div>
+
+                                        <div class="col-md-3 text-center">
+                                            <h6 class="text-danger"><span id="bestSellPrice"></span> ETC</h6>
+                                            <small class="text-white">Best Sell Price</small>
+                                        </div>
+                                        
+                                        <div class="col-md-3 text-center">
+                                            <h6 class="text-danger"><span id="bestSellOrder"></span> FWT</h6>
+                                            <small class="text-white">Best Sell Order</small>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <hr />
+                                    
+                                    <div class="row">
+                                            <div class="col text-center">
+                                                <h3 class="text-success"><span id="price24h"></span> ETC <small class="text-white"><i>(<span id="changePercent"></span>%)</i></small></h3>
+                                                <small class="text-white">24Hr Price</small>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <h3 class="text-white"><span id="volume24h"></span> ETC</h3>
+                                                <small class="text-white">24Hr Volume</small>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <h3 class="text-white"><span id="totalSupply"></span> FWT</h3>
+                                                <small class="text-white">Total Supply</small>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Market Data Provided by Saturn DEX</small>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col text-center text-white">
+                        <div id="log"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel rcAll">
+                    <div class="col text-center">
+                        <p class="text-white">
+                            This platform and its connected Smart Contracts and services are provided &quot;As-Is&quot;.<br />
+                            <i class="text-danger">No guarantee of safety, security, profitability, immunity from error or warranty is provided nor implied.</i><br />
+                            <small class="text-white">Developers, Participants, Members, Holders and/or other related parties will <i>not</i> be held responsible for any losses you incur.<br />
+                            You are responsible for your own investments - Don&apos;t Trust - Verify.</small><br />
+                            <br />
+                            <small class="text-white">FluxWallet.me and its creations are not endorsed or sponsored by Saturn Network, GitHub, Ethereum Classic, or any other party.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Buy ETC Modal -->
+        <div class="modal" id="buyETCModal">
+            <div class="modal-dialog">
+                <div class="modal-content border-white rcAll">
+                    <div class="modal-header bg-primary text-white rcTop">
+                        <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETC</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-primary text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-warning rcAll" href="https://binance.com" target="_blank">
+                                            <img src="assets/img/external/binance.png" width="50px" height="50px" /><br />
+                                            <b>Binance</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-success rcAll" href="https://changelly.com" target="_blank">
+                                            <img src="assets/img/external/changelly.png" width="80px" height="50px" /><br />
+                                            <b>Changelly</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://moonpay.io" target="_blank">
+                                            <img src="assets/img/external/moonpay.png" width="50px" height="50px" /><br />
+                                            <b>Moonpay</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-dark rcAll" href="https://bestchange.com" target="_blank">
+                                            <img src="assets/img/external/bestchange.jpg" width="50px" height="50px" /><br />
+                                            <b>Bestchange</b><br />
+                                            <small>RU, Asia</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-info rcAll" href="https://coinbase.com" target="_blank">
+                                            <img src="assets/img/external/coinbase.jpg" width="50px" height="50px" /><br />
+                                            <b>Coinbase</b><br />
+                                            <small>USA, EU, AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-danger rcAll" href="https://coinspot.com.au" target="_blank">
+                                            <img src="assets/img/external/coinspot.png" width="50px" height="50px" /><br />
+                                            <b>Coinspot</b><br />
+                                            <small>AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://indodax.com" target="_blank">
+                                            <img src="assets/img/external/indodax.png" width="50px" height="50px" /><br />
+                                            <b>Indodax</b><br />
+                                            <small>INDO</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer bg-primary text-white rcBottom">
+                            <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </body>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/ethereumjs.min.js"></script>
+    <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    
+    <script src="assets/lib/sale.js"></script>
+    <script src="assets/lib/saturn.js"></script>
+</html>
