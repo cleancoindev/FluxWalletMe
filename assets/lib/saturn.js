@@ -1,4 +1,4 @@
-var jsonURL = "https://ticker.saturn.network/api/v2/tokens/show/etc/0x6Eb1846Bb70356bbbe66185608ae5d5258eFB3E2.json";
+var jsonURL = "https://ticker.saturn.network/api/v2/tokens/show/etc/0xf71c38Cb53478b2Aa7b06F1116b8b7121dF2dED4.json";
 
 $(document).ready(function(){
     $.getJSON(jsonURL, function(result){

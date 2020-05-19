@@ -84,14 +84,14 @@ var minimalTokenABI = [{
   		"payable": false, "stateMutability": "nonpayable", "type": "constructor"
   	}
   ];
-  var saleAddress = '0xCE7c6c6a3A645Bde856bfFcA8Ad54EBC27CE0F98';
+  var saleAddress = '0x1834729Ce08b226e18CB25Fb5d735454ED2d5d84';
 
   var saleContract = web3.eth.contract(saleABI).at(saleAddress);
 
   // These values could be determined dynamically at runtime, but they never
   // change, so there's no harm in hard-coding them, and it saves us network
   // round-trips.
-  var tokenAddress = '0x6Eb1846Bb70356bbbe66185608ae5d5258eFB3E2';
+  var tokenAddress = '0xf71c38Cb53478b2Aa7b06F1116b8b7121dF2dED4';
   var tokenContract = web3.eth.contract(minimalTokenABI).at(tokenAddress);
   var decimals = 18;
   var price = 1000000000000000;
@@ -231,31 +231,24 @@ $(function () {
   });
 
 function log(message) {
-		$('#log').append($('<p>').text(message));
-		$('#log').scrollTop($('#log').prop('scrollHeight'));
-	}
+    $('#log').append($('<p>').text(message));
+    $('#log').scrollTop($('#log').prop('scrollHeight'));
+}
 
-	function error(message) {
-		$('#log').append($('<p>').addClass('dark-red').text(message));
-		$('#log').scrollTop($('#log').prop('scrollHeight'));
-	}
+function error(message) {
+    $('#log').append($('<p>').addClass('dark-red').text(message));
+    $('#log').scrollTop($('#log').prop('scrollHeight'));
+}
 
-	function waitForReceipt(hash, cb) {
-		web3.eth.getTransactionReceipt(hash, function (err, receipt) {
-			if (err) {
-				error(err);
-			}
-
-			if (receipt !== null) {
-				
-				if (cb) {
-					cb(receipt);
-				}
-			} else {
-				
-				window.setTimeout(function () {
-					waitForReceipt(hash, cb);
-				}, 1000);
-			}
-		});
-	}
+function waitForReceipt(hash, cb) {
+    web3.eth.getTransactionReceipt(hash, function (err, receipt) {
+        if (err) {error(err);}
+        if (receipt !== null) {
+            if (cb) {cb(receipt);}
+        } else {
+            window.setTimeout(function () {
+                waitForReceipt(hash, cb);
+            }, 1000);
+        }
+    });
+}
