@@ -44,17 +44,19 @@ function initialize() {
 
 $('#wrapEtherForm').submit(function (e) {
     e.preventDefault();
+    var _etherToWrapPlainVal = $('#etherToWrap').val();
     var _etherToWrap = web3.toWei($('#etherToWrap').val());
     wrappedEtherContract.wrapEther.sendTransaction({value: _etherToWrap,}, function () {
-        // TODO: Add alertify
+        alertify.success(_etherToWrapPlainVal + ' ETC wrapping...')
     });
 });
 
 $('#unwrapEtherForm').submit(function (e) {
     e.preventDefault();
+    var _etherToUnwrapPlainVal = $('#etherToUnwrap').val();
     var _etherToUnwrap = web3.toWei($('#etherToUnwrap').val());
     wrappedEtherContract.unwrapEther.sendTransaction(_etherToUnwrap, {}, function () {
-        // TODO: Add alertify
+        alertify.success(_etherToUnwrapPlainVal + ' FWETC unwrapping...')
     });
 });
 
