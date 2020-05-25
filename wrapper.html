@@ -13,7 +13,7 @@
         <meta property="og:description" content="Multichain Dapp and Game Development Project" />
         <meta property="og:image" content="https://fluxwallet.me/assets/img/coin.png" />
         
-        <title>Home | FluxWallet.me</title>
+        <title>FWETC | FluxWallet.me</title>
         
         <meta charset="utf8">
         <meta name="description" content="Multichain Dapp and Game Development Project">
@@ -47,172 +47,234 @@
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cubes text-white"></i> Dapps</a>
-                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown04">
-                                <a class="dropdown-item text-white" href="pure3c.html"><i class="fas fa-coins text-white"></i> Pure3C</a>
-                                <a class="dropdown-item text-white" href="broadcast.html"><i class="fas fa-broadcast-tower text-white"></i> Broadcaster</a>
-                                <a class="dropdown-item text-white" href="sale.html"><i class="fas fa-dollar-sign text-white"></i> Buy FWT</a>
-                            </div>
+                        <li class="nav-item"><a class="nav-link" href="wrapper.html"><i class="fas fa-coins text-white"></i>  FWETC</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sale.html"><i class="fas fa-dollar-sign text-white"></i> Buy FWT</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.saturn.network/token/ETC/FWT" target="_blank">
+                                <i class="fas fa-chart-line text-white"></i> Trade FWT
+                            </a>
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-dice text-danger"></i> Games</a>
-                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown03">
-                                <a class="dropdown-item text-white" href="powerinc.html"><i class="fas fa-bolt text-white"></i> Power Inc</a>
-                                <a class="dropdown-item text-white" href="racearena.html"><i class="fas fa-flag-checkered text-white"></i> Race Arena</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cubes text-white"></i> More Dapps
+                            </a>
+                            <div class="dropdown-menu bg-dark text-white" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-white" href="powerinc.html"><i class="fas fa-bolt"></i> Power Inc</a>
+                                <a class="dropdown-item text-white" href="racearena.html"><i class="fas fa-flag-checkered"></i> Race Arena</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-white" href="broadcast.html"><i class="fas fa-broadcast-tower"></i> Broadcaster</a>
+                                <a class="dropdown-item text-white" href="pure3c.html"><i class="fas fa-piggy-bank"></i> Pure3C</a>
                             </div>
                         </li>
-                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools text-warning"></i> Tools</a>
-                            <div class="dropdown-menu bg-primary" aria-labelledby="dropdown03">
-                                <a class="dropdown-item text-white" href="contracts.html"><i class="fas fa-search-dollar text-warning"></i> Contracts</a>
-                                <a class="dropdown-item text-white" href="wrapper.html"><i class="fas fa-coins text-white"></i> FWETC Dapp</a>
-                            </div>
-                        </li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="https://www.saturn.network/token/ETC/0xf71c38Cb53478b2Aa7b06F1116b8b7121dF2dED4" target="_blank"><i class="fas fa-chart-line text-success"></i> Trade FWT</a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="https://discord.gg/uQUa3F2" target="_blank"><i class="fab fa-discord text-primary"></i> Discord</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://twitter.com/FluxWallet" target="_blank"><i class="fab fa-twitter text-info"></i> Twitter</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/FluxWallet" target="_blank"><i class="fab fa-github text-light"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contracts.html" target="_blank"><i class="fas fa-search-dollar text-warning"></i> Contracts</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         
         <br /><br /><br />
-        <br /><br />
+        <br /><br /><br />
         
         <main>
             <div class="container">
-                <div class="row jumbotron glassPanel rcAll text-white">
-                    <div class="col text-center">
-                        <h4 class="text-white">You have <span id="userWETCBalance" class="userWETCBalance"></span> FWETC</h4>
-                        <p class="text-muted">FluxWallet Wrapped ETC</p>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="alert alert-dismissible alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>WARNING:</strong> This is highly experimental! It works - but please, Only use ETC you can afford to lose until FluxWallet.me gets Smart Contract Verification!
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="row">
                     <div class="col-md-6">
-                        <form id="wrapEtherForm">
                         <div class="card glassPanel border-success rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-success"></i> Wrap ETC</div>
-                            <div class="card-body">
+                            <div class="card-header glassPanel rcTop text-white">My Wallet</div>
+                            <div class="card-body text-white">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <input class="form-control rcAll etherToWrap" placeholder="ETC to Wrap..." type="text" name="etherToWrap" id="etherToWrap"><br />
+                                            <h4 class="text-white">You have <span id="userWETCBalance" class="userWETCBalance"></span> FWETC</h4>
+                                            <p class="text-muted">FluxWallet Wrapped ETC</p>
+                                            <a class="btn btn-block btn-sm btn-info rcAll" href="https://blockscout.com/etc/mainnet/address/0xec89f7BdF4E3f4484e7ed4A965c9923AACf726C7/transactions" target="_blank">View on Blockscout</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input class="btn btn-block btn-md btn-success rcAll" type="submit" value="Wrap ETC">
-                                        </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-success rcAll" href="#" data-toggle="modal" data-target="#wrapModal">Wrap ETC</a>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-sm btn-danger rcAll" href="#" data-toggle="modal" data-target="#unwrapModal">Unwrap FWETC</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </form>
                         <br />
+                        
                     </div>
+                    
                     <div class="col-md-6">
-                        <form id="unwrapEtherForm">
-                        <div class="card glassPanel border-danger rcAll">
-                            <div class="card-header glassPanel rcTop text-white"><i class="fas fa-dollar-sign text-danger"></i> Unwrap FWETC</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input class="form-control rcAll etherToUnwrap" placeholder="FWETC to Unwrap..." type="text" name="etherToUnwrap" id="etherToUnwrap"><br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer glassPanel rcBottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <input class="btn btn-block btn-md btn-danger rcAll" type="submit" value="Unwrap FWETC">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </form>
-                        <br />
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-4">
                         <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-white">Total ETC Wrapped</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-white"><span id="totalWrapped" class="totalWrapped"></span> ETC</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer text-center text-white">
-                                <small>Since deployment on Mainnet</small>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-white">Total FWETC Unwrapped</div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-white"><span id="totalUnwrapped" class="totalUnwrapped">0</span> ETC</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer text-center text-white">
-                                <small>Since deployment on Mainnet</small>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card glassPanel border-white rcAll">
-                            <div class="card-header glassPanel rcTop text-white">Current FWETC Supply</div>
+                            <div class="card-header glassPanel rcTop text-white">FWETC Statistics</div>
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-center">
                                             <h4 class="text-white"><span id="currentWrapped">0</span> FWETC</h4>
+                                            <p class="text-muted">Current Supply</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h5 class="text-white"><span id="totalWrapped" class="totalWrapped"></span> ETC</h5>
+                                            <small class="text-muted">Total Wrapped</small>
+                                        </div>
+                                        
+                                        <div class="col text-center">
+                                            <h5 class="text-white"><span id="totalUnwrapped" class="totalUnwrapped">0</span> ETC</h5>
+                                            <small class="text-muted">Total Unwrapped</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer text-center text-white">
-                                <small>Enabling ETC with ERC20</small>
+                                <small>Since deployment on Mainnet</small>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                
+                
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="alert alert-dismissible alert-danger rcAll">
+                            <strong>WARNING:</strong> This is highly experimental! It works - but please, Only use ETC you can afford to lose until FluxWallet.me gets Smart Contract Verification!
+                        </div>
+                    </div>
+                </div>
+                <br />
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="accordion" id="accordionExample">
+                        <div class="card glassPanel rcTop">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0 text-white">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b class="text-white">What is FluxWallet Wrapped ETC?</b>
+                                    </button>
+                                </h3>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    FluxWallet Wrapped ETC (FWETC) is an ERC20 token minted and destroyed at a 1:1 ratio,  representing the ETC held within the FWETC Smart Contract.<br />
+                                                    Simply put, it gives ETC the powers of an ERC20 token - programmable, multi-functional - but still most importantly, <i>immutable, decentralised and secure</i>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b class="text-white">How does it Work?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        There&apos;s two parts to how FWETC works: <i>Wrapping ETC</i> and <i>Unwrapping FWETC</i>. Let&apos;s quickly go through both.
+                                    </p>
+                                    
+                                    <b class="text-white">Wrapping ETC</b>
+                                    <ul>
+                                        <li class="text-white">1. You deposit ETC into the FWETC Smart Contract, via this Dapp interface</li>
+                                        <li class="text-white">2. Once transactions are confirmed, you receive <b>FWETC</b>, minted 1:1 with the ETC you deposited</li>
+                                        <li class="text-white">3. You use the FWETC however applicable to your requirement</li>
+                                        <li class="text-white">4. You come back here to <i>unwrap your FWETC</i> once you are done</li>
+                                    </ul>
+                                    <br />
+                                    
+                                    <b class="text-white">Unwrapping FWETC</b>
+                                    <ul>
+                                        <li class="text-white">1. You unwrap FWETC tokens via this Dapp interface</li>
+                                        <li class="text-white">2. FWETC tokens are destroyed from the <i>Current Supply</i>, at a 1:1 ratio with the ETC you receive from unwrapping the FWETC tokens.</li>
+                                        <li class="text-white">3. You have ETC in your wallet, ready for regular use or trading!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <b class="text-white">Can I trade FWETC anywhere?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    FluxWallet Wrapped ETC is made available for use by the general public, via this Dapp interface.<br />
+                                                    Right now, FWETC is not listed on any exchanges or DEXs - however, You are welcome to wrap and unwrap ETC as you need / see fit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel rcBottom">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <b class="text-white">How Do I Get Started?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-success rcAll" href="#buyETCModal" data-toggle="modal" data-target="#buyETCModal">Buy some ETC</a>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-info rcAll" href="https://share.trustwallet.com/u5tgB1" target="_blank">Trust Wallet</a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        
+                                        <div class="row">
+                                            <div class="col text-center text-white">
+                                                You&apos;ll need some Ethereum Classic (ETC) and a Wallet to use most of the included functionality of this Dapp.<br />
+                                                <br />
+                                                <a href="https://www.saturn.network/blog/saturn-wallet/" target="_blank"><b class="text-success">Saturn Wallet</b></a>
+                                                 works with <a href="https://chrome.google.com/webstore/detail/saturn-wallet/nkddgncdjgjfcddamfgcmfnlhccnimig?hl=en" target="_blank" class="text-success">Google Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/saturn-wallet/" target="_blank" class="text-success">Firefox</a>, and is the best choice for using Ethereum and Ethereum Classic quickly, efficiently and securely on your computer.<br />
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
                         <br />
@@ -225,11 +287,10 @@
             <div class="container">
                 <div class="row jumbotron glassPanel rcAll">
                     <div class="col text-center">
-                        <p class="text-white">
-                            This platform is provided &quot;As-Is&quot;, with <i>NO guarantee of profit or gain</i>.<br />
-                            FluxWallet.me is experimental technology, so only invest what you can afford to lose.<br />
-                            Developers and associates will not be held responsible for any losses you may incur.
-                        </p>
+                        <small class="text-white">
+                            This Dapp, Token, Smart Contract, Internet Magic and all things encompassed by anything on this website, are provided &quot;As-Is&quot;.<br />
+                            There is no warranty, guarantee of safety/security/profit/gain or freedom of error provided with this publication or its source code.
+                        </small>
                     </div>
                 </div>
             </div>
@@ -242,12 +303,12 @@
         <div class="modal" id="buyETCModal">
             <div class="modal-dialog">
                 <div class="modal-content border-white rcAll">
-                    <div class="modal-header bg-primary text-white rcTop">
+                    <div class="modal-header bg-dark text-white rcTop">
                         <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy ETC</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
-                    <div class="modal-body bg-primary text-white">
+                    <div class="modal-body bg-dark text-white">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4 text-center">
@@ -336,6 +397,81 @@
                 </div>
             </div>
         
+        <!-- Wrap ETC Modal -->
+        <div class="modal" id="wrapModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Wrap ETC</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="wrapEtherForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="form-control rcAll etherToWrap" placeholder="ETC to Wrap..." type="text" name="etherToWrap" id="etherToWrap"><br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="btn btn-block btn-md btn-success rcAll" type="submit" value="Wrap ETC">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-md btn-primary rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unwrap ETC Modal -->
+        <div class="modal" id="unwrapModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark rcAll">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Unwrap ETC</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="unwrapEtherForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="form-control rcAll etherToUnwrap" placeholder="FWETC to Unwrap..." type="text" name="etherToUnwrap" id="etherToUnwrap"><br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <input class="btn btn-block btn-md btn-danger rcAll" type="submit" value="Unwrap FWETC">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-md btn-primary rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         
         <!-- Bootstrap core JavaScript -->
         <script src="assets/js/jquery.min.js"></script>
