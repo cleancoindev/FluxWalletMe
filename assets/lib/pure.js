@@ -102,7 +102,7 @@ function getCropInfo() {
     getMyCropDividends()
 }
 
-// This buys P3C from the crop, but with you as the referrer
+// This buys WLTH from the crop, but with you as the referrer
 function buyFromCrop(amountToBuy, referrer) {
     amount = web3.toWei(amountToBuy)
     p3cContract.buy.sendTransaction(
@@ -123,7 +123,7 @@ function buyFromCrop(amountToBuy, referrer) {
     )
 }
 
-// This buys P3C from the crop, but with you as the referrer
+// This buys WLTH from the crop, but with you as the referrer
 function sellFromCrop(amountToSell) {
     amount = web3.toWei(amountToSell)
     p3cContract.sell.sendTransaction(
@@ -136,7 +136,7 @@ function sellFromCrop(amountToSell) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success(amountToSell + " P3C Sold. Waiting for Blockchain.")
+                alertify.success(amountToSell + " WLTH Sold. Waiting for Blockchain.")
                 console.log(result);
             } else {
                 console.log(error);
@@ -154,7 +154,7 @@ function reinvestFromCrop(referrer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Reinvested P3C. Waiting for Blockchain.")
+                alertify.success("Reinvested WLTH. Waiting for Blockchain.")
                 console.log(result);
             } else {
                 console.log(error);
@@ -190,7 +190,7 @@ function transferFromCrop(destination, amountToTransfer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Transferring " + amountToTransfer + " P3C to " + destination.substring(0, 7) + "...")
+                alertify.success("Transferring " + amountToTransfer + " WLTH to " + destination.substring(0, 7) + "...")
                 console.log(result);
             } else {
                 console.log(error);

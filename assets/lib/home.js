@@ -32,7 +32,7 @@ function setStats() {
 			$("#etcPriceUSD").replaceWith(data.ETCPriceUSD)
 
 			// $('#createdStats').popup({
-			// 	html: 'P3C tokens can <b>only</b> be created by sending Ethereum Classic (ETC) to the contract. There is no central authority that can inflate P3C. Hard cap assumes every ETC possible (210,000,000) is in contract.',
+			// 	html: 'WLTH tokens can <b>only</b> be created by sending Ethereum Classic (ETC) to the contract. There is no central authority that can inflate P3C. Hard cap assumes every ETC possible (210,000,000) is in contract.',
 			// 	position: 'bottom center'
 			// });
 			// $('#priceStats').popup({
