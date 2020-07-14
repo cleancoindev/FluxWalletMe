@@ -60,6 +60,15 @@ $('#unwrapEtherForm').submit(function (e) {
     });
 });
 
+$('#transferFWETCForm').submit(function (e) {
+    e.preventDefault();
+    var _fwetcToTransferPlainVal = $('#tokenQuantity').val();
+    var _recipientAddr = $('#tokenReceiver').val();
+    wrappedEtherContract.transfer.sendTransaction(_recipientAddr, _fwetcToTransferPlainVal, {}, function () {
+        alertify.success(_fwetcToTransferPlainVal + ' FWETC Transferring to ' + _recipientAddr + ' - Waiting for Blockchain...')
+    });
+})
+
 function log(message) {
     $('#log').append($('<p>').text(message));
     $('#log').scrollTop($('#log').prop('scrollHeight'));
